@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <div ngbAccordion [closeOthers]="true" class="accordion-item">
+            <!-- <div ngbAccordion [closeOthers]="true" class="accordion-item">
                 @for (item of items; track item) {
                     <div ngbAccordionItem [collapsed]="item !== 'First'">
                         <h2 ngbAccordionHeader>
@@ -27,7 +27,21 @@
                         </div>
                     </div>
                 }
-            </div>
+            </div> -->
+            <accordion [isAnimated]="true">
+                <accordion-group heading="Static Header">
+                  This content is straight in the template.
+                </accordion-group>
+                <accordion-group heading="Another group">
+                  <p>Some content</p>
+                </accordion-group>
+                <accordion-group heading="Another group">
+                  <p>Some content</p>
+                </accordion-group>
+                <accordion-group heading="Another group">
+                  <p>Some content</p>
+                </accordion-group>
+              </accordion>
         </div>
         <div class="col-md-8 col-sm-12" style="background-color: burlywood; height: 10px;">
 

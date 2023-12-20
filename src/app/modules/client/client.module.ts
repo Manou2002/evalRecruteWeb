@@ -5,7 +5,7 @@ import { ClientRoutingModule } from './client-routing.module';
 import { HeaderComponent } from '../../components/client-page/header/header.component';
 import { FooterComponent } from '../../components/client-page/footer/footer.component';
 import { MenuComponent } from '../../components/client-page/menu/menu.component';
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -21,7 +21,7 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     ClientRoutingModule,
-    NgbAccordionModule
+    // NgbAccordionModule
   ]
 })
 export class ClientModule { }
