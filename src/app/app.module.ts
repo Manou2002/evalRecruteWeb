@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './components/client-page/accueil/accueil.component';
 import { OffresComponent } from './components/client-page/offres/offres.component';
 import { DetailsOffresComponent } from './components/client-page/details-offres/details-offres.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -27,7 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     KeycloakAngularModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    // NgbModule
   ],
   providers: [
     KeycloakService,
