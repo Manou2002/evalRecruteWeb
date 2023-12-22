@@ -1,0 +1,243 @@
+<div class="container">
+
+    <ol class="breadcrumb">
+        <li><a href="#" [routerLink]="'/client-page/accueil'" >Accueil</a></li>
+        <li class="active">Offres</li>
+    </ol>
+
+    <div class="row">
+        <div class="col-md-4">
+            <!-- <div ngbAccordion [closeOthers]="true" class="accordion-item">
+                @for (item of items; track item) {
+                    <div ngbAccordionItem [collapsed]="item !== 'First'">
+                        <h2 ngbAccordionHeader>
+                            <button class="" ngbAccordionButton>{{ item }}</button>
+                        </h2>
+                        <div ngbAccordionCollapse>
+                            <div ngbAccordionBody>
+                                <ng-template>
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+                                    officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                    wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                    excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                    you probably haven't heard of them accusamus labore sustainable VHS.
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div> -->
+            <accordion [isAnimated]="true">
+                <accordion-group heading="Secteurs d'activite" class="test">
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                       Resources-humaines
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                       Developpement
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                       Comptabilité
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                     Architecture
+                    </label>
+                 </div>
+                </accordion-group>
+                <accordion-group heading="Niveaux d'étude">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                     BAC
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                     BAC+1
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                     BAC+2
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      BAC+3
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      BAC+4
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      BAC+5 Et plus
+                    </label>
+                 </div>
+                </accordion-group>
+                <accordion-group heading="Niveaux d'expérience">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Etudiant, jeune diplômé
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                     Debutant < 2ans
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Expérience entre 2 ans et 5 ans
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Expérience entre 5 ans et 10 ans 
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Expéreience > 10 ans                   
+                    </label>
+                 </div>
+                </accordion-group>
+                <accordion-group heading="Types de contrat">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                       CDD
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                       CDI
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Stage
+                    </label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                       Formation
+                    </label>
+                 </div>
+                </accordion-group>
+              </accordion>
+        </div>
+        <div class="col-md-8 col-sm-12">
+
+            <div class="panel bg-white border-2">
+                <div class="panel-body">
+                   <p>
+                    <b>10</b> offres d'emploi trouvées
+                   </p>
+                   <hr>
+                   <div class="row offres" (click)="openDetOffre()">
+                    <div class="col-md-3 offres-img"> 
+                        
+                            <div style="text-align: center; vertical-align: middle;" class="logo">
+                                <img src="/assets/images/logo_GS2E.jpg" class="img-responsive img-circle" width="140px" height="140px" alt="">
+                            </div>
+                       
+                        
+                       
+                    </div>
+                    <div class="col-md-8 offre-desc">
+                        <h4>Architecture</h4>
+                        <div>
+                            <span> 20/12/2023 | </span>
+                            <span class="offre-entreprise">GS2E</span>
+
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illum ullam doloremque doloribus, quae accusantium? Cumque quaerat assumenda dolores harum molestiae ab, reprehenderit laudantium illum magni cupiditate aliquid laboriosam dolor.</p>
+                        <div>
+                            <span>Compétences clés : </span>
+                            <span>JAVA, PHP</span>
+                        </div>
+
+                    </div>
+
+                   </div>
+
+                   <div class="row offres">
+                     <div class="col-md-3 offres-img"> 
+                         
+                             <div style="text-align: center; vertical-align: middle;" class="logo">
+                                 <img src="/assets/images/logo_GS2E.jpg" class="img-responsive img-circle" width="140px" height="140px" alt="">
+                             </div>
+                        
+                         
+                        
+                     </div>
+                     <div class="col-md-8 offre-desc">
+                         <h4>Developpement</h4>
+                         <div>
+                             <span> 21/12/2023 | </span>
+                             <span class="offre-entreprise">GS2E</span>
+ 
+                         </div>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illum ullam doloremque doloribus, quae accusantium? Cumque quaerat assumenda dolores harum molestiae ab, reprehenderit laudantium illum magni cupiditate aliquid laboriosam dolor.</p>
+                         <div>
+                             <span>Compétences clés : </span>
+                             <span>JAVA, HTML,ANGULAR</span>
+                         </div>
+                         
+                     </div>
+ 
+                    </div>
+                </div>
+                <div class="panel-footer">
+                  <nav aria-label="Page navigation">
+                     <ul class="pagination">
+                       <li>
+                         <a href="#" aria-label="Previous">
+                           <span aria-hidden="true">&laquo;</span>
+                         </a>
+                       </li>
+                       <li><a href="#">1</a></li>
+                       <li><a href="#">2</a></li>
+                       <li><a href="#">3</a></li>
+                       <li>
+                         <a href="#" aria-label="Next">
+                           <span aria-hidden="true">&raquo;</span>
+                         </a>
+                       </li>
+                     </ul>
+                   </nav>
+                </div>
+            </div>
+
+
+        </div>
+        
+    </div>
+</div>
