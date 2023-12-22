@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: "",
     redirectTo:"client-page",
-    pathMatch:"full"
+    pathMatch:"full",
     //canActivate: [AuthGuard]
   },
   {
@@ -19,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule
+  ]
 })
 export class AppRoutingModule { }
