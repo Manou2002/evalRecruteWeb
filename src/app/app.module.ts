@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializer } from './init/keycloak-init.factory';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,11 +13,9 @@ import { DetailsOffresComponent } from './components/client-page/details-offres/
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     AccueilComponent,
     OffresComponent,
     DetailsOffresComponent,

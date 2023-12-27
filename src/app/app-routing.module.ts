@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guard/auth.guard';
 import { url_path } from './constants/app.constant';
 
@@ -14,6 +13,10 @@ const routes: Routes = [
   {
     path:"client-page",
     loadChildren: () => import('./modules/client/client.module').then(m => m.ClientModule),
+  },
+  {
+  path: "admin-page",
+  loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),
   }
 ];
 
