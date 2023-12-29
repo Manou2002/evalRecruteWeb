@@ -9,15 +9,13 @@ import { KeycloakLoginOptions } from 'keycloak-js';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  routeModule? : Router
-  constructor(private router : Router, private keycloakService:KeycloakService){
-  this.routeModule = this.router
+  routeModule?: Router
+  constructor(private router: Router, private keycloakService: KeycloakService) {
+    this.routeModule = this.router
 
   }
-  
-  goToLoginPage(){
-   
-    
+
+  goToLoginPage() {
     this.keycloakService.login({
       redirectUri: window.location.href
     })

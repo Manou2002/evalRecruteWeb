@@ -6,7 +6,8 @@
 
 :root{
   --primary-color: #8BC03C;
-  --color-grey: grey
+  --color-grey: grey;
+  --color-orange:orange;
 }
 
 /*====== STYLES GENERAUX ===========*/
@@ -25,12 +26,17 @@ body {
 /*========== HEADER + NAV ============*/
 
 header {
-    background-image: url('assets/images/background.jpg');
-    background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/image-demande-emploi.jpg');
+    background-attachment: scroll;
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
+}
+
+.logo{
+    width: 80px;
+    margin-top: 10px;
 }
 
 nav {
@@ -48,12 +54,12 @@ nav {
 
 .nav-link,
 .navbar-brand {
-    color: white;
+    color: var(--color-orange);
     font-weight: bold;
 }
 
 .navbar-brand:hover {
-    color: white;
+    color: var(--color-orange);
 }
 
 .nav-link:hover {
@@ -64,7 +70,6 @@ nav {
 .menu-item-login:hover {
     color: white;
     font-weight: bold;
-    border-bottom: none;
 }
 
 .text-header {
@@ -74,16 +79,17 @@ nav {
 
 .active-menu {
     border-bottom: 2px solid var(--primary-color);
+    color: white;
 }
 
 .text-header h1 {
     color: white;
-    font-size: 50px;
+    font-size: 5em;
     font-weight: bold;
 }
 
 .text-header p {
-    font-size: 15px;
+    font-size: 2em;
     color: white;
     font-weight: 400;
 }
@@ -96,7 +102,11 @@ nav {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    width: 150px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    opacity: 0.9;
 }
 
 /*======== GREEN SECTION ============*/
@@ -121,16 +131,16 @@ nav {
 
 /*========== SECTION JOBS =============*/
 .divider-section {
-    border: 1px solid grey;
+    border: 1px solid var(--color-grey);
     width: 30px;
 }
 
 .table{
-    color: grey;
+    color: var(--color-grey);
 }
 
 thead th {
-    border-bottom: 5px solid grey;
+    border-bottom: 5px solid var(--color-grey);
     font-weight: bolder;
 }
 
@@ -148,7 +158,7 @@ footer h4 i{
 }
 footer p{
     font-size: 12px;
-    color: grey;
+    color: var(--color-grey);
 }
 
 @media screen and (max-width: 768px) {

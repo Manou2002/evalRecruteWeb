@@ -1,25 +1,28 @@
-<!-- Fixed navbar -->
-<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+<nav class="navbar navbar-expand-md justify-content-center">
     <div class="container">
-        <div class="navbar-header">
-            <!-- Button for smallest screens -->
-            <button title="quelquechose" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo-new.png" alt=""></a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav pull-right">
-                <li class="{{routeModule?.url?.includes('accueil')? 'active': ''}}"><a href="#"re [routerLink]="'/client-page/accueil'" >Accueil</a></li>
-                <li class="{{routeModule?.url?.includes('offres')? 'active': ''}}"><a href="#" [routerLink]="'/client-page/offres'" >Offres</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mon Compte  <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="sidebar-left.html">Left Sidebar</a></li>
-                        <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-                    </ul>
+        <a href="#" [routerLink]="'/client-page/accueil'" class="navbar-brand d-flex me-auto"><img src="assets/images/logo-new.png" class="logo" alt="" srcset=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapsingNavbar3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+            <ul class="navbar-nav w-100 justify-content-center">
+                <li class="nav-item me-md-4 me-sm-0">
+                    <a class="nav-link {{routeModule?.url?.includes('accueil')? 'active-menu': ''}}" aria-current="page" href="#" [routerLink]="'/client-page/accueil'">Accueil</a>
                 </li>
-                <li><a class="btn" (click)="goToLoginPage()">SIGN IN / SIGN UP</a></li>
+                <li class="nav-item me-md-4 me-sm-0">
+                    <a class="nav-link {{routeModule?.url?.includes('offres')? 'active-menu': ''}}" href="#" [routerLink]="'/client-page/offres'">Offres</a>
+                </li>
+                <!-- <li class="nav-item me-md-4 me-sm-0">
+                    <a class="nav-link" href="#">A Propos de nous</a>
+                </li> -->
+                <li class="nav-item me-md-2 me-sm-0">
+                    <a class="nav-link menu-item-login" href="#" (click)="goToLoginPage()">Se Connecter / Créér un compte</a>
+                </li>
+
             </ul>
-        </div><!--/.nav-collapse -->
+            <!-- <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
+            </ul> -->
+        </div>
     </div>
-</div> 
-<!-- /.navbar -->
+</nav>

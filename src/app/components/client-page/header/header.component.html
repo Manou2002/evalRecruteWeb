@@ -1,13 +1,39 @@
-<header id="head" class="{{!routeModule?.url?.includes('accueil')? 'secondary': ''}}">
-    <div class="container" *ngIf="routeModule?.url?.includes('accueil')">
-        <div class="row">
-            <h1 class="lead" >GS2E WEB_RECRUTE</h1>
-            <p class="tagline">PROGRESSUS: free business bootstrap template by <a href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetTemplate</a></p>
-            <br><br><br><br><br><br><br><br><br>
-            <p><a class="btn btn-default btn-lg" role="button">OFFRES DISPONIBLES</a> <a class="btn btn-action btn-lg" role="button">DETAILS DES OFFRES</a></p>
+
+    <div class="container">
+        <div class="row text-header">
+            <div class="col-12 align-self-center">
+                <div class="row">
+                    <div class="offset-md-3 col-md-6 col-sm-12">
+                        <h1>Build Your Futur</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-md-3 col-md-6 col-sm-12 mt-4 mb-3">
+                        <p>Nous offrons <span>2,989</span> emplois actuellement</p>
+                    </div>
+                </div>
+                <form action="" class="row">
+                    <div class="offset-md-2 col-md-8">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" name="search"
+                                    placeholder="Entrez votre recherche">
+                            </div>
+                            <div class="col-md-4">
+                                <select name="" aria-label="Default select example"
+                                    class="form-select me-md-3 mb-xs-3" id="">
+                                    <option value="" selected>Toutes les entreprises</option>
+                                    <option value="">GS2E</option>
+                                    <option value="">SODECI</option>
+                                    <option value="">CIE</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="submit" class="form-control btn btn-primary" value="Rechercher">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</header>
-<!-- /Header -->
-
-
