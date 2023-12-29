@@ -1,25 +1,84 @@
-.accordion-item h2 {
-/* font-size: 18px; */
-
-}
-/* .custom-header::after{
-    content: none;
-} */
-
-
-.btn-accordeon{
-    /* border: none;
-    background-color: transparent;
+.offre-desc h4{
     font-weight: bold;
-    /* width: 100%; */
-    /* text-align: left; */
-
+    
 }
-/* 
-.accordion-item .collapsed{
-    background-color: #;
-} */
+.offres-img{
 
-/* .accordion-header .collapsed h2 {
-margin: 2;
-} */
+
+    text-align: center;
+}
+
+.offres-img img{
+    vertical-align: middle;
+}
+.offres:hover{
+    background-color:#f7e2d4;
+    cursor:pointer ;
+}
+
+.offres:hover h4{
+    color:#5ba9e4;
+  
+}
+.offres{
+    border-top: 1px solid rgb(238, 232, 232);
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    
+}
+.panel-footer{
+    text-align: center;
+    font-size: large;
+}
+.logo{
+    margin-top: 40px;
+   
+}
+.offre-entreprise{
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.form-check-label{
+    margin-left: 15px;
+    font-size: medium;
+    font-weight: 200px;
+    
+    
+}
+
+.form-check-label:hover{
+    font-weight: bold;
+    color: #5ba9e4;
+    font-size: large;
+}
+
+.test{
+    font-size: large;
+    color: red;
+}
+
+@media only screen  and (max-width: 600px){
+    .logo{
+        position: relative;
+        margin-top: 0;
+        font-weight: bold;
+    }
+}
+
+@media only screen  and (max-width: 768px){
+    .logo{
+        position: relative;
+        margin-top: 0;
+
+    }
+}
+
+@media only screen  and (max-width: 992px){
+    .logo{
+        position: relative;
+        margin-top: 0;
+
+    }
+    
+}
