@@ -2,7 +2,7 @@ import { Poste } from "./postes";
 
 export class DomaineActivite{
 
-    id:string;
+    id:number;
     libelle:string;
     description:string;
     estActif:boolean;
@@ -11,7 +11,7 @@ export class DomaineActivite{
 
     constructor(){
 
-        this.id="";
+        this.id=0;
         this.libelle="";
         this.description=""
         this.estActif=false;

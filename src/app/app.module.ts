@@ -12,6 +12,9 @@ import { DetailsOffresComponent } from './components/client-page/details-offres/
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -26,9 +29,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     KeycloakAngularModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     // NgbModule
     AccordionModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
     KeycloakService,

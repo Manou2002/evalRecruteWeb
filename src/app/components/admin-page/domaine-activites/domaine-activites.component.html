@@ -1,0 +1,106 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Domaines d'activité</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <button type="button" class="btn btn-sm btn-primary" (click)="open(template)">
+        <span data-feather="calendar" class="align-text-bottom"></span>
+        Ajouter un domaine d'activité
+      </button>
+    </div>
+  </div>
+
+  <h2>Liste des domaines d'activité</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Libellé</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr scope="row" *ngFor="let domaineActivite of domainActiviteList; index as i">
+          <td>{{i+1}}</td>
+          <td>{{domaineActivite.libelle}}</td>
+          <td>{{domaineActivite.description}}</td>
+          <td>
+            <button type="button" class="btn btn-warning" (click)="open(template, domaineActivite)"><i class="fa fa-edit"></i></button>&nbsp;
+            <button type="button"  class="btn btn-danger" (click)="open(templateDelete, domaineActivite, true)"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <nav aria-label="...">
+      <ul class="pagination justify-content-center">
+        <a class="page-link {{apiResponse?.total_pages == 1 ? 'disabled' : '' }}" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+        <div *ngIf="page_size">
+          <li *ngFor="let item of page_array; let index = index" class="page-item  {{apiResponse?.current_page == index ? 'active' : ''}}" attr.aria-current="{{apiResponse?.current_page == index ? 'page' : ''}}">
+            <a *ngIf="apiResponse?.current_page != index" class="page-link" href="#"> {{index + 1}} </a>
+            <span class="page-link" *ngIf="apiResponse?.current_page == index">{{index + 1}} </span>
+          </li>
+        </div>
+        
+        <a class="page-link {{apiResponse?.total_pages == 1 ? 'disabled' : '' }}" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </ul>
+    </nav>
+  </div>
+  
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{txtModalHeader}}</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <form #addDomainActiviteForm="ngForm" (ngSubmit)="save(addDomainActiviteForm)">
+    <div class="modal-body">
+            <div class="mb-3">
+                <label for="libelle" class="form-label">Libellé</label>
+                <input type="text" id="libelle" name="libelle" required [(ngModel)]="domaineActiviteForm.libelle" #libelle="ngModel" class="form-control" placeholder="veuillez renseigner le libellé du domaine d'activité" aria-describedby="passwordHelpBlock">
+                <div [hidden]="libelle.valid || libelle.pristine" class="alert alert-danger">
+                  Ce champs est obligatoire
+                </div>
+              </div> 
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" required [(ngModel)]="domaineActiviteForm.description" #description="ngModel" rows="3"></textarea>
+                <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+                  Ce champs est obligatoire
+                </div>
+              </div>   
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" type="submit" [disabled]="!addDomainActiviteForm.form.valid && !loadingBtn">
+          <i class="fa" [ngClass]="{'fa-spin fa-spinner' : loadingBtn, 'fa-check': !loadingBtn}"></i>
+          {{textButton}}
+        </button>
+    </div>
+</form>
+  </ng-template>
+
+  <ng-template #templateDelete>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{txtModalHeader}}</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+            <p class="fs-5">Voulez-vous supprimer ce domaine d'activité ?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="modalRef?.hide()">
+        Annuler
+      </button>
+        <button class="btn btn-success" type="submit" (click)="delete()">
+          <i class="fa" [ngClass]="{'fa-spin fa-spinner' : loadingBtn, 'fa-check': !loadingBtn}"></i>
+          {{textButton}}
+        </button>
+    </div>
+  </ng-template>
+
