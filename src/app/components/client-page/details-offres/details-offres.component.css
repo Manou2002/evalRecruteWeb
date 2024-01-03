@@ -32,6 +32,8 @@ text-decoration: none;
     margin: 6px;
 }
 
+
+
 .panel-body{
     padding-left: 20px;
     padding-right: 20px;
@@ -45,12 +47,13 @@ text-decoration: none;
 
 .btn{
     background-color: rgb(245, 122, 122);
-    color: aliceblue;
+    color: white;
     border-radius: 30px;
     border: none;
     font-size: 25px;
-    
+    width: auto;
 }
+
 .btn:hover{
     background-color: rgb(186, 33, 33);
 }

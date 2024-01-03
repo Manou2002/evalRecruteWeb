@@ -1,19 +1,23 @@
-<div class="container">
-    <ol class="breadcrumb">
-        <li>
-            <a href="#" [routerLink]="'/client-page/accueil'">Accueil</a>
-        </li>
-        <li>
-            <a href="#" [routerLink]="'/client-page/offres'">offres</a>
-        </li>
-        <li class="active">Details</li>
-    </ol>
-    <div class="row">
+<section class="container pt-4 pb-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#" [routerLink]="'/client-page/accueil'">Accueil</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#" [routerLink]="'/client-page/offres'">offres</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Détails</li>
+        </ol>
+    </nav>
+    <div class="row pt-2 pb-4">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Entreprise</div>
-                <div class="panel-body">
-                    <div class="row">
+            <div class="card panel-default border-0 shadow">
+                <div class="card-header">
+                    <h4>Entreprise</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row p-4">
                         <div class="col-md-9 entreprise">
                             <h3> GROUPEMENT DES SERVICES EAU ET ELECTRICITE</h3>
                             <div class="titre">
@@ -22,20 +26,13 @@
                             </div>
                             <div class="titre">
                                 <span class="secteur">offres d'emploi :</span>
-                                <a>voir toutes les annonces</a>
+                                <a href="#"> voir toutes les annonces</a>
                             </div>
                         </div>
-                        <div class="row offres">
-                            <div class="col-md-3 offres-img">
-                                <div style="text-align: center; vertical-align: middle;" class="logo">
-                                    <img
-                                        src="/assets/images/logo_GS2E.jpg"
-                                        class="img-responsive img-circle"
-                                        width="140px"
-                                        height="140px"
-                                        alt=""
-                                    >
-                                </div>
+                        <div class="col-md-3 offres-img">
+                            <div class="logo">
+                                <img src="/assets/images/logo-new.png" class="img-responsive img-circle" width="140px"
+                                    height="140px" alt="">
                             </div>
                         </div>
                     </div>
@@ -44,24 +41,35 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row pt-2 pb-4">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Détails de l'offre</div>
-                <div class="panel-body">
+            <div class="card panel-default border-0 shadow">
+                <div class="card-header">
+                    <h4>Détails de l'offre</h4>
+                </div>
+                <div class="card-body p-4">
                     <div class="row">
                         <div class="col-md-12">
-                            
+
                             <div class="posteProposé">
                                 <span>Poste proposé : Développeur JAVA</span>
                             </div>
                             <div class="detMission">
-                                <span>vos missions au quotidien</span>
+                                <ul>
+                                    <li>
+                                        <span>Vos missions au quotidien</span>
+                                    </li>
+                                </ul>
+
                             </div>
 
                             <div class="texte">
-                                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo corporis numquam alias, asperiores, laborum, atque ad eligendi iure officiis ipsum natus. Dignissimos nostrum minima, ratione cumque pariatur hic illum! Veniam.
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In ipsum illo obcaecati ex nobis, maiores omnis aperiam odit sapiente accusantium quae nisi laborum sed quasi? Cumque consectetur fuga rem impedit?
+                                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo corporis numquam
+                                    alias, asperiores, laborum, atque ad eligendi iure officiis ipsum natus. Dignissimos
+                                    nostrum minima, ratione cumque pariatur hic illum! Veniam.
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In ipsum illo obcaecati ex
+                                    nobis, maiores omnis aperiam odit sapiente accusantium quae nisi laborum sed quasi?
+                                    Cumque consectetur fuga rem impedit?
                                     lo
                                 </span>
                             </div>
@@ -71,10 +79,11 @@
             </div>
         </div>
     </div>
-    <div class="row" style="text-align: center;">
-        <button type="button" class="btn" aria-label="Left Align">
-            <span> Postuler à l'offre</span>
-          </button>
+    <div class="row">
+        <div class="d-flex justify-content-center pt-4 pb-4">
+            <button type="button" class="btn btn-primary" aria-label="Left Align">
+                <i class="fa fa-upload"></i> Postuler à l'offre
+            </button>
+        </div>
     </div>
-</div>
-
+</section>

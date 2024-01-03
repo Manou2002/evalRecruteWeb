@@ -5,7 +5,7 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
         config: {
             clientId: "frontend",
             realm: "master",
-            url: "http://localhost:8080/"
+            url: "http://localhost:8090/"
         },
         loadUserProfileAtStartUp: true,
         initOptions: {

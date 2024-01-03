@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   styleUrl: './offres.component.css'
 })
 export class OffresComponent {
-  items = ['First', 'Second', 'Third'];
+  items = ["Secteurs d'activité", "Niveaux d'étude", "Niveaux d'expérience"];
   customClass: string = "customClass";
-  constructor(private router : Router){
-  
-    }
-  
-  openDetOffre(){
+  constructor(private router: Router) {
+
+  }
+
+  openDetOffre() {
     this.router.navigate(["/client-page/details-offres"])
 
   }
