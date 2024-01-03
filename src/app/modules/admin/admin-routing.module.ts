@@ -6,8 +6,8 @@ import { PostesComponent } from '../../components/admin-page/postes/postes.compo
 import { TestsComponent } from '../../components/admin-page/tests/tests.component';
 import { DomaineActivitesComponent } from '../../components/admin-page/domaine-activites/domaine-activites.component';
 import { TypesContratsComponent } from '../../components/admin-page/types-contrats/types-contrats.component';
-import { NiveauExperienceComponent } from '../../components/admin-page/niveau-experience/niveau-experience.component';
 import { NiveauEtudesComponent } from '../../components/admin-page/niveau-etudes/niveau-etudes.component';
+import { NiveauExperiencesComponent } from '../../components/admin-page/niveau-experience/niveau-experience.component';
 const routes: Routes = [
   {
     path: "",
@@ -40,7 +40,7 @@ const routes: Routes = [
         },
         {
           path:'niveauExperiences',
-          component:NiveauExperienceComponent
+          component:NiveauExperiencesComponent
         },
         {
           path:'niveauEtudes',

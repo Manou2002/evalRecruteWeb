@@ -1,86 +1,106 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Types de contrat</h1>
-    <div class="btn-toolbar mb-2 mb-md-0">
-      <button type="button" class="btn btn-sm btn-primary" (click)="openModal(template)">
-        <span data-feather="calendar" class="align-text-bottom"></span>
-        Ajouter un type de contrat
-      </button>
-    </div>
+  <h1 class="h2">Types de Contrat</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <button type="button" class="btn btn-sm btn-primary" (click)="open(template)">
+      <span data-feather="calendar" class="align-text-bottom"></span>
+      Ajouter un type de contrat
+    </button>
   </div>
+</div>
 
-  <h2>Liste des types de contrat</h2>
-  <div class="table-responsive">
-    <table class="table table-striped table-sm">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Libellé</th>
-          <th scope="col">Description</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1,001</td>
-          <td>random</td>
-          <td>random</td>
-          <td>
-            <button type="button" class="btn btn-warning">Modifier</button>&nbsp;
-            <button type="button"  class="btn btn-danger">Supprimer</button>
-          </td>
-        </tr>
-        <tr>
-          <td>1,002</td>
-          <td>placeholder</td>
-          <td>random</td>
-          <td>
-            <button type="button" class="btn btn-warning">Modifier</button>&nbsp;
-            <button type="button"  class="btn btn-danger">Supprimer</button>
-          </td>
-        </tr>
-        <tr>
-          <td>1,003</td>
-          <td>data</td>
-          <td>random</td>
-          <td>
-            <button type="button" class="btn btn-warning">Modifier</button>&nbsp;
-            <button type="button"  class="btn btn-danger">Supprimer</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-  </div>
-  
+<h2>Liste des types de contrat</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Libellé</th>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" *ngFor="let typeContrat of typeContratList; index as i">
+        <td>{{i+1}}</td>
+        <td>{{typeContrat.libelle}}</td>
+        <td>{{typeContrat.description}}</td>
+        <td>
+          <button type="button" class="btn btn-warning" (click)="open(template, typeContrat)"><i class="fa fa-edit"></i></button>&nbsp;
+          <button type="button"  class="btn btn-danger" (click)="open(templateDelete, typeContrat, true)"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="...">
+    <ul class="pagination justify-content-center">
+      <a class="page-link {{apiResponse?.total_pages == 1 ? 'disabled' : '' }}" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+      <div *ngIf="page_size">
+        <li *ngFor="let item of page_array; let index = index" class="page-item  {{apiResponse?.current_page == index ? 'active' : ''}}" attr.aria-current="{{apiResponse?.current_page == index ? 'page' : ''}}">
+          <a *ngIf="apiResponse?.current_page != index" class="page-link" href="#"> {{index + 1}} </a>
+          <span class="page-link" *ngIf="apiResponse?.current_page == index">{{index + 1}} </span>
+        </li>
+      </div>
+      
+      <a class="page-link {{apiResponse?.total_pages == 1 ? 'disabled' : '' }}" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </ul>
+  </nav>
+</div>
+
 <ng-template #template>
-    <div class="modal-header">
-      <h4 class="modal-title pull-left">Ajout d'un type de contrat</h4>
-      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-      </button>
-    </div>
-    <form>
-    <div class="modal-body">
-            <div class="mb-3">
-                <label for="inputPassword5" class="form-label">Libellé</label>
-                <input type="text" id="inputPassword5" class="form-control" placeholder="veuillez renseigner le libellé du type de contrat" aria-describedby="passwordHelpBlock">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{txtModalHeader}}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <form #addTypeContratForm="ngForm" (ngSubmit)="save(addTypeContratForm)">
+  <div class="modal-body">
+          <div class="mb-3">
+              <label for="libelle" class="form-label">Libellé</label>
+              <input type="text" id="libelle" name="libelle" required [(ngModel)]="typeContratForm.libelle" #libelle="ngModel" class="form-control" placeholder="veuillez renseigner le libellé du domaine d'activité" aria-describedby="passwordHelpBlock">
+              <div [hidden]="libelle.valid || libelle.pristine" class="alert alert-danger">
+                Ce champs est obligatoire
+              </div>
             </div> 
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>  
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-success" type="submit">Valider</button>
-    </div>
+          <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" name="description" required [(ngModel)]="typeContratForm.description" #description="ngModel" rows="3"></textarea>
+              <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+                Ce champs est obligatoire
+              </div>
+            </div>   
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-success" type="submit" [disabled]="!addTypeContratForm.form.valid && !loadingBtn">
+        <i class="fa" [ngClass]="{'fa-spin fa-spinner' : loadingBtn, 'fa-check': !loadingBtn}"></i>
+        {{textButton}}
+      </button>
+  </div>
 </form>
-  </ng-template>
+</ng-template>
+
+<ng-template #templateDelete>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{txtModalHeader}}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+          <p class="fs-5">Voulez-vous supprimer ce type de contrat</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modalRef?.hide()">
+      Annuler
+    </button>
+      <button class="btn btn-success" type="submit" (click)="delete()">
+        <i class="fa" [ngClass]="{'fa-spin fa-spinner' : loadingBtn, 'fa-check': !loadingBtn}"></i>
+        {{textButton}}
+      </button>
+  </div>
+</ng-template>
+

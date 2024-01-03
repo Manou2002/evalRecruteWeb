@@ -60,6 +60,7 @@ export class DomaineActivitesComponent implements OnInit {
   // }
 
   getAllDomaineActivite() {
+    this.domainActiviteList = []
     this._domaineActiviteService.getAll().subscribe({
       next: (Response: any) => {
         this.apiResponse = Response as ApiResponse

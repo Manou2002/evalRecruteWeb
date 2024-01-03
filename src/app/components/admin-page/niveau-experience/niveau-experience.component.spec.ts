@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NiveauExperienceComponent } from './niveau-experience.component';
+import { NiveauExperiencesComponent } from './niveau-experience.component';
 
 describe('NiveauExperienceComponent', () => {
-  let component: NiveauExperienceComponent;
-  let fixture: ComponentFixture<NiveauExperienceComponent>;
+  let component: NiveauExperiencesComponent;
+  let fixture: ComponentFixture<NiveauExperiencesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NiveauExperienceComponent]
+      declarations: [NiveauExperiencesComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NiveauExperienceComponent);
+    fixture = TestBed.createComponent(NiveauExperiencesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
