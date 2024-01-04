@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminHomeComponent } from '../../components/admin-page/admin-home/admin-home.component';
 import { AccueilAdminComponent } from '../../components/admin-page/accueil-admin/accueil-admin.component';
-import { PostesComponent } from '../../components/admin-page/postes/postes.component';
 import { TestsComponent } from '../../components/admin-page/tests/tests.component';
 import { DomaineActivitesComponent } from '../../components/admin-page/domaine-activites/domaine-activites.component';
 import { TypesContratsComponent } from '../../components/admin-page/types-contrats/types-contrats.component';
 import { NiveauEtudesComponent } from '../../components/admin-page/niveau-etudes/niveau-etudes.component';
 import { NiveauExperiencesComponent } from '../../components/admin-page/niveau-experience/niveau-experience.component';
+import { OffresAdminComponent } from '../../components/admin-page/offres-admin/offres-admin.component';
 const routes: Routes = [
   {
     path: "",
@@ -23,8 +23,8 @@ const routes: Routes = [
         pathMatch:"full"
         },
         {
-          path:'poste',
-          component:PostesComponent
+          path:'offre',
+          component:OffresAdminComponent
         },
         {
           path:'test',

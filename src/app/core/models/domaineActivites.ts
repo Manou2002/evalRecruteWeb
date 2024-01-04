@@ -1,4 +1,3 @@
-import { Poste } from "./postes";
 
 export class DomaineActivite{
 
@@ -17,6 +16,5 @@ export class DomaineActivite{
         this.estActif=false;
         this.createdBy="";
         this.updatedBy="";
-    
-        }
+            }
 }

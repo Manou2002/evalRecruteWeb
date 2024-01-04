@@ -6,7 +6,7 @@ DOMAINE_ACTIVITE_BASE: '/domaine-activites',
 NIVEAU_EXPERIENCE_BASE: '/niveau-experiences',
 NIVEAU_ETUDE_BASE: '/niveau-etudes',
 TYPES_CONTRAT_BASE: '/type-contrats',
-POSTE_BASE: '/postes',
+OFFRE_BASE: '/offres',
 RECRUTEUR_BASE: '/recruteurs',
 TEST_BASE: '/test'
 

@@ -1,4 +1,4 @@
-import { Poste } from "./postes";
+import { Poste } from "./offres";
 
 export class Candidat {
 

@@ -67,7 +67,6 @@ export class NiveauEtudesComponent {
         this.apiResponse = Response as ApiResponse
         this.page_size = this.apiResponse.total_pages < 5;
         this.page_array = new Array(this.apiResponse.total_pages)
-        console.log(this.page_array)
         this.niveauEtudeList = this.apiResponse.data;
       },
       error: Error => {

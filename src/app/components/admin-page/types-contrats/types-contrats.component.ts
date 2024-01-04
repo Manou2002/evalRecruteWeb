@@ -28,9 +28,9 @@ export class TypesContratsComponent {
       processing:"Traitement en cours...",
     },
     modalHeader: {
-      save: "Ajout d'un domaine d'activité",
-      update: "Modification d'un domaine d'activité",
-      delete: "Suppression d'un domaine d'activité",
+      save: "Ajout d'un type de contrat",
+      update: "Modification d'un type de contra",
+      delete: "Suppression d'un type de contra",
     }
   };
 
