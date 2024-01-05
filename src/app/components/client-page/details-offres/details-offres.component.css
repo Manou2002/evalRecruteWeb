@@ -1,0 +1,59 @@
+.panel-heading{
+    font-size: 25px;
+}
+.entreprise h3{
+    font-size: 18px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.entreprise:hover h3{
+text-decoration: none;
+}
+
+.titre{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.secteur{
+    font-weight: bold;
+}
+
+.posteProposé{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.detMission{
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 100px;
+    margin: 6px;
+}
+
+
+
+.panel-body{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.texte{
+    margin-top: 10px;
+    font-size: medium;
+    font-family: sans-serif;
+}
+
+.btn{
+    background-color: rgb(245, 122, 122);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    font-size: 25px;
+    width: auto;
+}
+
+.btn:hover{
+    background-color: rgb(186, 33, 33);
+}
