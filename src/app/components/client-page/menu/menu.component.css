@@ -1,3 +1,41 @@
 .navbar {
     /* height: 70px; */
 }
+
+.logo{
+    width: 80px;
+    margin-top: 10px;
+}
+
+nav {
+    height: 50px;
+}
+
+.navbar-brand {
+    font-size: 18px;
+}
+
+.navbar-brand span {
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+.nav-link,
+.navbar-brand {
+    color: var(--color-orange);
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: var(--color-orange);
+}
+
+.nav-link:hover {
+    color: white;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.menu-item-login:hover {
+    color: white;
+    font-weight: bold;
+}

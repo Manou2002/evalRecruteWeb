@@ -25,21 +25,21 @@ body {
 
 /*========== HEADER + NAV ============*/
 
-header {
+/* header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/image-demande-emploi.jpg');
     background-attachment: scroll;
     background-size: cover;
     background-position: center;
     width: 100%;
-    /* height: 500px; */
-}
+    height: 500px; 
+} */
 
-.logo{
+/* .logo{
     width: 80px;
     margin-top: 10px;
-}
+} */
 
-nav {
+/* nav {
     height: 50px;
 }
 
@@ -65,24 +65,24 @@ nav {
 .nav-link:hover {
     color: white;
     border-bottom: 2px solid var(--primary-color);
-}
+} */
 
-.menu-item-login:hover {
+/* .menu-item-login:hover {
     color: white;
     font-weight: bold;
-}
+} */
 
-.text-header {
+/* .text-header {
     text-align: center;
     height: 450px;
-}
+} */
 
 .active-menu {
     border-bottom: 2px solid var(--primary-color);
     color: white;
 }
 
-.text-header h1 {
+/* .text-header h1 {
     color: white;
     font-size: 3em;
     font-weight: bold;
@@ -92,25 +92,25 @@ nav {
     font-size: 2em;
     color: white;
     font-weight: 400;
-}
-
+} */
+/* 
 .text-header p span {
     color: var(--primary-color);
-}
+} */
 
-.btn-primary {
+.btn-client-style {
     background-color: var(--primary-color);
     color: white;
     border: none;
 }
 
-.btn-primary:hover {
+.btn-client-style:hover {
     background-color: var(--primary-color);
     opacity: 0.9;
 }
 
 /*======== GREEN SECTION ============*/
-.section-green {
+/* .section-green {
     background-color: var(--primary-color);
     text-align: center;
     color: white;
@@ -127,10 +127,10 @@ nav {
 .divider-section-green {
     border: 1px solid white;
     width: 30px;
-}
+} */
 
 /*========== SECTION JOBS =============*/
-.divider-section {
+/* .divider-section {
     border: 1px solid var(--color-grey);
     width: 30px;
 }
@@ -142,7 +142,7 @@ nav {
 thead th {
     border-bottom: 5px solid var(--color-grey);
     font-weight: bolder;
-}
+} */
 
 /*======== FOOTER ============*/
 footer{

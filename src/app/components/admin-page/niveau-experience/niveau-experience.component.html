@@ -1,0 +1,97 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Niveau d'expérience</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <button type="button" class="btn btn-sm btn-primary" (click)="open(template)">
+        <span data-feather="calendar" class="align-text-bottom"></span>
+        Ajouter un niveau d'expérience
+      </button>
+    </div>
+  </div>
+
+  <h2>Liste des domaines d'expérience</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Libellé</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr scope="row" *ngFor="let niveauExperience of niveauExperienceList; index as i">
+          <td>{{i+1}}</td>
+          <td>{{niveauExperience.libelle}}</td>
+          <td>
+            <button type="button" class="btn btn-warning" (click)="open(template, niveauExperience)"><i class="fa fa-edit"></i></button>&nbsp;
+            <button type="button"  class="btn btn-danger" (click)="open(templateDelete, niveauExperience, true)"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+        <nav aria-label="...">
+          <ul class="pagination justify-content-center">
+            <a class="page-link {{apiResponse?.total_pages == 1 ? 'disabled' : '' }}" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+            <div *ngIf="page_size">
+              <li *ngFor="let item of page_array; let index = index" class="page-item  {{apiResponse?.current_page == index ? 'active' : ''}}" attr.aria-current="{{apiResponse?.current_page == index ? 'page' : ''}}">
+                <a *ngIf="apiResponse?.current_page != index" class="page-link" href="#"> {{index + 1}} </a>
+                <span class="page-link" *ngIf="apiResponse?.current_page == index">{{index + 1}} </span>
+              </li>
+            </div>
+            
+            <a class="page-link {{apiResponse?.total_pages == 1 ? 'disabled' : '' }}" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </ul>
+        </nav>
+      </div>
+      
+    <ng-template #template let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">{{txtModalHeader}}</h4>
+          <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <form #addNiveauExperienceForm="ngForm" (ngSubmit)="save(addNiveauExperienceForm)">
+        <div class="modal-body">
+                <div class="mb-3">
+                    <label for="libelle" class="form-label">Libellé</label>
+                    <input type="text" id="libelle" name="libelle" required [(ngModel)]="niveauExperienceForm.libelle" #libelle="ngModel" class="form-control" placeholder="veuillez renseigner le libellé du domaine d'activité" aria-describedby="passwordHelpBlock">
+                    <div [hidden]="libelle.valid || libelle.pristine" class="alert alert-danger">
+                      Ce champs est obligatoire
+                    </div>
+                  </div>  
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" type="submit" [disabled]="!addNiveauExperienceForm.form.valid && !loadingBtn">
+              <i class="fa" [ngClass]="{'fa-spin fa-spinner' : loadingBtn, 'fa-check': !loadingBtn}"></i>
+              {{textButton}}
+            </button>
+        </div>
+    </form>
+      </ng-template>
+    
+      <ng-template #templateDelete let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">{{txtModalHeader}}</h4>
+          <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                <p class="fs-5">Voulez-vous supprimer ce niveau d'experience ?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">
+            Annuler
+          </button>
+            <button class="btn btn-success" type="submit" (click)="delete()">
+              <i class="fa" [ngClass]="{'fa-spin fa-spinner' : loadingBtn, 'fa-check': !loadingBtn}"></i>
+              {{textButton}}
+            </button>
+        </div>
+      </ng-template>
+    

@@ -1,3 +1,36 @@
 .offre-link{
     color: var(--primary-color);
 }
+
+.section-green {
+    background-color: var(--primary-color);
+    text-align: center;
+    color: white;
+}
+
+.content {
+    border-right: 1px solid white;
+}
+
+.section-green i {
+    font-size: 40px;
+}
+
+.divider-section-green {
+    border: 1px solid white;
+    width: 30px;
+}
+
+.divider-section {
+    border: 1px solid var(--color-grey);
+    width: 30px;
+}
+
+.table{
+    color: var(--color-grey);
+}
+
+thead th {
+    border-bottom: 5px solid var(--color-grey);
+    font-weight: bolder;
+}

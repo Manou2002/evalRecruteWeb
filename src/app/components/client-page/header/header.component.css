@@ -1,0 +1,21 @@
+.text-header {
+    text-align: center;
+    height: 450px;
+}
+
+.text-header h1 {
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.text-header p {
+    font-size: 2em;
+    color: white;
+    font-weight: 400;
+}
+
+
+.text-header p span {
+    color: var(--primary-color);
+}
