@@ -109,8 +109,8 @@
       </div>
       <div class="col-md-6 col-sm-12">
         <div class="mb-3">
-          <label for="nombreOffre" class="form-label">Nombre de Offre</label>
-          <input type="number" min="1" id="nombreOffre" name="nombreOffre"  required [(ngModel)]="OffreForm.nombreOffre" #nombreOffre="ngModel" class="form-control" aria-describedby="passwordHelpBlock">
+          <label for="nombrePoste" class="form-label">Nombre de Poste</label>
+          <input type="number" min="1" id="nombrePoste" name="nombrePoste"  required [(ngModel)]="OffreForm.nombrePoste" #nombrePoste="ngModel" class="form-control" aria-describedby="passwordHelpBlock">
       </div> 
       </div>
 
@@ -162,12 +162,12 @@
       <div class="col-md-6 col-sm-12">
         <div class="mb-3">
           <label for="inputPassword5" class="form-label">Type de contrat</label>
-          <select class="form-select"  id="typeContrat" name="typeContrat" required [(ngModel)]="OffreForm.TypesContrats.id" #typeContrat="ngModel"  aria-label="Default select example">
+          <select class="form-select"  id="typeContrats" name="typeContrats" required [(ngModel)]="OffreForm.typeContrats.id" #typeContrats="ngModel"  aria-label="Default select example">
             <option selected>Sélectionnez un type de contrat</option>
             <option *ngFor="let typeContratData of typeContratList"
             value="{{typeContratData.id}}">{{typeContratData.libelle}}</option>
           </select>
-          <div [hidden]="!controlSelection(typeContrat) || typeContrat.pristine"
+          <div [hidden]="!controlSelection(typeContrats) || typeContrats.pristine"
           class="alert alert-danger">
           Ce champ est obligatoire
           </div>

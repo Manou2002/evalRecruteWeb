@@ -21,6 +21,7 @@ export class AccueilComponent implements OnInit {
 
 constructor(
     private _OffreService:OffreApiService,
+
 ) {}
 
   ngOnInit(): void {

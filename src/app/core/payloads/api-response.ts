@@ -1,7 +1,7 @@
 export class ApiResponse{
     
     page_size: number;
-    data:any[];
+    data:any;
     total_pages:number;
     total_items:number;
     statut:boolean;

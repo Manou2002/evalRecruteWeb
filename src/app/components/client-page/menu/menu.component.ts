@@ -16,6 +16,8 @@ export class MenuComponent {
   }
 
   goToLoginPage() {
+    console.log("click =================");
+    
     this.keycloakService.login({
       redirectUri: window.location.href
     })

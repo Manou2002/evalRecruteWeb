@@ -312,7 +312,10 @@
                <p>
                   <b>10</b> offres d'emploi trouvées
                </p>
-               <div class="row offres" (click)="openDetOffre()">
+
+               @for(offre of OffreList ; track offre.id) { 
+
+               <div class="row offres" (click)="openDetOffre(offre.id)">
                   <div class="col-md-3 offres-img">
 
                      <div style="text-align: center; vertical-align: middle;" class="logo">
@@ -321,77 +324,25 @@
                      </div>
                   </div>
                   <div class="col-md-8 offre-desc">
-                     <h4>Chef de projet informatique</h4>
+                     <h4>{{offre.titre}}</h4>
                      <div>
-                        <span> 20/12/2023 | </span>
+                        <span> Echéance: {{offre.dateFin}} | </span>
                         <span class="offre-entreprise">GS2E</span>
 
                      </div>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illum ullam doloremque
-                        doloribus, quae accusantium? Cumque quaerat assumenda dolores harum molestiae ab, reprehenderit
-                        laudantium illum magni cupiditate aliquid laboriosam dolor.</p>
+                     <p>{{offre.mission}}</p>
                      <div>
                         <span>Compétences clés : </span>
-                        <span>JAVA, PHP</span>
+                        <span>{{offre.competence}}</span>
                      </div>
 
                   </div>
 
                </div>
+            }  @empty {
+               <p>Aucun(e) donnee en base </p>
+                 }
 
-               <div class="row offres">
-                  <div class="col-md-3 offres-img">
-
-                     <div style="text-align: center; vertical-align: middle;" class="logo">
-                        <img src="/assets/images/logo-sodeci.png" class="img-responsive img-circle" width="140px"
-                           height="140px" alt="">
-                     </div>
-                  </div>
-                  <div class="col-md-8 offre-desc">
-                     <h4>Technicien Robineterie</h4>
-                     <div>
-                        <span> 21/12/2023 | </span>
-                        <span class="offre-entreprise">SODECI</span>
-
-                     </div>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illum ullam doloremque
-                        doloribus, quae accusantium? Cumque quaerat assumenda dolores harum molestiae ab, reprehenderit
-                        laudantium illum magni cupiditate aliquid laboriosam dolor.</p>
-                     <div>
-                        <span>Compétences clés : </span>
-                        <span>Tuyauterie, Plomberie</span>
-                     </div>
-
-                  </div>
-
-               </div>
-
-               <div class="row offres">
-                  <div class="col-md-3 offres-img">
-
-                     <div style="text-align: center; vertical-align: middle;" class="logo">
-                        <img src="/assets/images/logo-cie.png" class="img-responsive img-circle" width="140px"
-                           height="140px" alt="">
-                     </div>
-                  </div>
-                  <div class="col-md-8 offre-desc">
-                     <h4>Ingenieur Electricien</h4>
-                     <div>
-                        <span> 05/08/2023 | </span>
-                        <span class="offre-entreprise">CIE</span>
-
-                     </div>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illum ullam doloremque
-                        doloribus, quae accusantium? Cumque quaerat assumenda dolores harum molestiae ab, reprehenderit
-                        laudantium illum magni cupiditate aliquid laboriosam dolor.</p>
-                     <div>
-                        <span>Compétences clés : </span>
-                        <span>Tuyauterie, Plomberie</span>
-                     </div>
-
-                  </div>
-
-               </div>
             </div>
             <div class="card-footer d-flex justify-content-center">
                <nav aria-label="...">

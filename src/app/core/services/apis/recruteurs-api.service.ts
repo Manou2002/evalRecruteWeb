@@ -19,7 +19,7 @@ export class RecruteurApiService {
   }
 
   getById(id: number) {
-    return this._apiRequestService.get(url_path.RECRUTEUR_BASE + '/id' + id);
+    return this._apiRequestService.get(url_path.RECRUTEUR_BASE + '/' + id);
   }
 
   save(data: Recruteur) {
@@ -27,10 +27,10 @@ export class RecruteurApiService {
   }
 
   update(data: Recruteur) {
-    return this._apiRequestService.put({endpoint: url_path.RECRUTEUR_BASE+'/id', data: JSON.stringify(data)})
+    return this._apiRequestService.put({endpoint: url_path.RECRUTEUR_BASE+'/'+data.id, data: JSON.stringify(data)})
   }
 
   delete(id: number) {
-    return this._apiRequestService.delete(url_path.RECRUTEUR_BASE + "/id" + id)
+    return this._apiRequestService.delete(url_path.RECRUTEUR_BASE + "/" + id)
   }
 }

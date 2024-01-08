@@ -4,6 +4,7 @@ import { ClientHomeComponent } from '../../components/client-page/client-home/cl
 import { AccueilComponent } from '../../components/client-page/accueil/accueil.component';
 import { OffresComponent } from '../../components/client-page/offres/offres.component';
 import { DetailsOffresComponent } from '../../components/client-page/details-offres/details-offres.component';
+import { AuthGuard } from '../../guard/auth.guard';
 const routes: Routes = [
   {
     path: "",
@@ -11,7 +12,7 @@ const routes: Routes = [
     children:[
       {
         path:'accueil',
-        component:AccueilComponent
+        component:AccueilComponent,
       },
       {
         path:"",
@@ -23,7 +24,7 @@ const routes: Routes = [
         component:OffresComponent
       },
       {
-        path:'details-offres',
+        path:'details-offres/:id',
         component:DetailsOffresComponent
       }
     ]

@@ -21,15 +21,17 @@ text-decoration: none;
 
 .posteProposé{
     font-size: 21px;
-    font-weight: bold;
 }
 
 .detMission{
-    text-decoration: underline;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: 100px;
     margin: 6px;
+}
+
+.detCompetence{
+    margin-top: 2px;
 }
 
 
@@ -40,7 +42,6 @@ text-decoration: none;
 }
 
 .texte{
-    margin-top: 10px;
     font-size: medium;
     font-family: sans-serif;
 }

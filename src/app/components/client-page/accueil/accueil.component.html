@@ -53,96 +53,22 @@
             <div class="divider-section"></div>
         </div>
         <div class="row justify-content-center mb-4">
+            @for(offre of OffreList ; track offre.id) { 
             <div class="col-md-3">
                 <div class="card shadow border-0">
                     <div class="card-body">
-                      <h5 class="card-title">Developpeur JAVA</h5>
-                      <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quis maxime quam accusamus nam quo dolorum</p>
+                      <h5 class="card-title"><span class="badge text-bg-secondary rounded-pill">{{offre.typeContrats.libelle}}</span> &nbsp;{{offre.titre}} </h5>
+                      <h6 class="text-danger" style="color: rgb(203, 30, 30);">Echéance: {{offre.dateFin}}</h6>
+                      <p class="card-text">{{offre.mission}}</p>
                     </div>
                     <div class="card-footer d-flex justify-content-center">
-                        <a href="#" [routerLink]="'/client-page/details-offres'" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
+                        <a href="#" [routerLink]="['/client-page/details-offres', offre.id]" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Consultant PHP</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quis maxime quam accusamus nam quo dolorum</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center">
-                        <a href="#" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Assistante de direction</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quis maxime quam accusamus nam quo dolorum</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center">
-                        <a href="#" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Developeur Web</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quis maxime quam accusamus nam quo dolorum</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center">
-                        <a href="#" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center mb-4">
-            <div class="col-md-3">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Chef de projet web</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quis maxime quam accusamus nam quo dolorum</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center">
-                        <a href="#" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Architecte</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quis maxime quam accusamus nam quo dolorum</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center">
-                        <a href="#" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Développeur Automatisation</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quis maxime quam accusamus nam quo dolorum</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center">
-                        <a href="#" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Senior Solution Architect</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quis maxime quam accusamus nam quo dolorum</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-center">
-                        <a href="#" class="btn btn-primary btn-client-style"><i class="fa fa-eye"></i> Voir</a>
-                    </div>
-                </div>
-            </div>
+        }  @empty {
+            <p>Aucun(e) donnee en base </p>
+              }
         </div>
         <div class="row mt-3 mb-3">
             <div class="col-md-12 d-flex justify-content-center">

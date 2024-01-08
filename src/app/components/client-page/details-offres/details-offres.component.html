@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 
     <div class="row pt-2 pb-4">
         <div class="col-md-12">
@@ -52,28 +52,54 @@
                         <div class="col-md-12">
 
                             <div class="posteProposé">
-                                <span>Poste proposé : Développeur JAVA</span>
+                                <span class="fw-bold">Poste proposé</span> : {{Offre?.titre}}
+                            </div>
+                            <div class="posteProposé">
+                                <span class="fw-bold"> Echéance </span> : {{Offre?.dateFin}}
+                            </div>
+                            <div class="posteProposé">
+                                <span class="fw-bold">Type de contrat </span> : {{Offre?.typeContrats?.libelle}}
+                            </div>
+                            <div class="posteProposé">
+                                <span class="fw-bold">Nombre de Poste </span> : {{Offre?.nombrePoste}}
+                            </div>
+                            <div class="posteProposé">
+                                <span class="fw-bold">Domaine d'activité </span> : {{Offre?.domaineActivite?.libelle}}
+                            </div>
+                            <div class="posteProposé">
+                                <span class="fw-bold">Niveau d'expérience </span> : {{Offre?.niveauExperience?.libelle}}
+                            </div>
+                            <div class="posteProposé">
+                                <span class="fw-bold">Niveau d'étude </span> : {{Offre?.niveauEtude?.libelle}}
                             </div>
                             <div class="detMission">
                                 <ul>
                                     <li>
                                         <span>Vos missions au quotidien</span>
+                                    
                                     </li>
                                 </ul>
+                                <div class="texte">
+                                    <span>{{Offre?.mission}}</span>
+                                </div>
 
                             </div>
 
+                        </div>
+
+                        <div class="detMission">
+                            <ul>
+                                <li>
+                                    <span>Competence requise pour le poste : </span>
+                                </li>
+                            </ul>
                             <div class="texte">
-                                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo corporis numquam
-                                    alias, asperiores, laborum, atque ad eligendi iure officiis ipsum natus. Dignissimos
-                                    nostrum minima, ratione cumque pariatur hic illum! Veniam.
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In ipsum illo obcaecati ex
-                                    nobis, maiores omnis aperiam odit sapiente accusantium quae nisi laborum sed quasi?
-                                    Cumque consectetur fuga rem impedit?
-                                    lo
-                                </span>
+                                <p>{{Offre?.competence}}</p>
                             </div>
                         </div>
+
+                        
+
                     </div>
                 </div>
             </div>

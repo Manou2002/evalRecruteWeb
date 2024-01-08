@@ -19,7 +19,7 @@ export class CandidatApiService {
   }
 
   getById(id: number) {
-    return this._apiRequestService.get(url_path.CANDIDAT_BASE + '/id' + id);
+    return this._apiRequestService.get(url_path.CANDIDAT_BASE + '/' + id);
   }
 
   save(data: Candidat) {
@@ -27,10 +27,10 @@ export class CandidatApiService {
   }
 
   update(data: Candidat) {
-    return this._apiRequestService.put({endpoint: url_path.CANDIDAT_BASE+'/id', data: JSON.stringify(data)})
+    return this._apiRequestService.put({endpoint: url_path.CANDIDAT_BASE+'/'+data.id, data: JSON.stringify(data)})
   }
 
   delete(id: number) {
-    return this._apiRequestService.delete(url_path.CANDIDAT_BASE + "/id" + id)
+    return this._apiRequestService.delete(url_path.CANDIDAT_BASE + "/" + id)
   }
 }

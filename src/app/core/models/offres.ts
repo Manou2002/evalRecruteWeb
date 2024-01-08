@@ -10,13 +10,13 @@ export class Offre {
     niveau:string;
     competence:string;
     dateOffre: string;
-    nombreOffre: number;
+    nombrePoste: number;
     dateFin: string;
     estActif:boolean;
     domaineActivite:DomaineActivite;
     niveauExperience:NiveauExperiences;
     niveauEtude:NiveauEtudes;
-    TypesContrats:TypesContrats;
+    typeContrats:TypesContrats;
     createdBy:string;
     updatedBy:string;
 
@@ -27,13 +27,13 @@ export class Offre {
         this.niveau="";
         this.competence="";
         this.dateOffre="";
-        this.nombreOffre=0;
+        this.nombrePoste=0;
         this.dateFin="";
         this.estActif=false;
         this.domaineActivite=new DomaineActivite();
         this.niveauExperience=new NiveauExperiences();
         this.niveauEtude=new NiveauEtudes();
-        this.TypesContrats=new TypesContrats();
+        this.typeContrats=new TypesContrats();
         this.createdBy="";
         this.updatedBy="";
     }

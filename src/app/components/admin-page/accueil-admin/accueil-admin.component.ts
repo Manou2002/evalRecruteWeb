@@ -10,5 +10,4 @@ import { OffreApiService } from '../../../core/services/apis/offres-api.service'
 export class AccueilAdminComponent {
 
 
-
 }

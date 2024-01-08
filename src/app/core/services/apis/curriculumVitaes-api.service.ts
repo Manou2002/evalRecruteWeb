@@ -19,7 +19,7 @@ export class CurriculumVitaeApiService {
   }
 
   getById(id: number) {
-    return this._apiRequestService.get(url_path.CURRICULUM_VITAE_BASE + '/id' + id);
+    return this._apiRequestService.get(url_path.CURRICULUM_VITAE_BASE + '/' + id);
   }
 
   save(data: CurriculumVitae) {
@@ -27,10 +27,10 @@ export class CurriculumVitaeApiService {
   }
 
   update(data: CurriculumVitae) {
-    return this._apiRequestService.put({endpoint: url_path.CURRICULUM_VITAE_BASE+'/id', data: JSON.stringify(data)})
+    return this._apiRequestService.put({endpoint: url_path.CURRICULUM_VITAE_BASE+'/'+data.id, data: JSON.stringify(data)})
   }
 
   delete(id: number) {
-    return this._apiRequestService.delete(url_path.CURRICULUM_VITAE_BASE + "/id" + id)
+    return this._apiRequestService.delete(url_path.CURRICULUM_VITAE_BASE + "/" + id)
   }
 }
